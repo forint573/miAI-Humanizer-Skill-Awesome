@@ -1,0 +1,173 @@
+#!/usr/bin/env python3
+"""
+run_checks.py — automated checks for The Sonnopus Humanizer.
+
+Dependency-free (standard library only). Validates the skill package structure
+and exercises the heuristic scanner end-to-end. Exits non-zero on any failure
+so it can gate CI.
+
+Usage:
+  python tests/run_checks.py
+"""
+
+from __future__ import annotations
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+SKILL_DIR = ROOT / "the-sonnopus-humanizer"
+SCANNER = SKILL_DIR / "scripts" / "copy_scan.py"
+
+failures: list[str] = []
+passes = 0
+
+
+def check(name: str, condition: bool, detail: str = "") -> None:
+    global passes
+    if condition:
+        passes += 1
+        print(f"  PASS  {name}")
+    else:
+        failures.append(name if not detail else f"{name} — {detail}")
+        print(f"  FAIL  {name}" + (f" — {detail}" if detail else ""))
+
+
+def parse_frontmatter(text: str) -> dict[str, str]:
+    """Minimal YAML frontmatter parser: top-level `key: value` pairs only."""
+    if not text.startswith("---"):
+        return {}
+    end = text.find("\n---", 3)
+    if end == -1:
+        return {}
+    block = text[3:end].strip().splitlines()
+    data: dict[str, str] = {}
+    for line in block:
+        if ":" in line and not line.startswith((" ", "\t")):
+            key, _, value = line.partition(":")
+            data[key.strip()] = value.strip().strip('"').strip("'")
+    return data
+
+
+def section(title: str) -> None:
+    print(f"\n{title}")
+
+
+# --- 1. Package structure ---------------------------------------------------
+section("Skill structure")
+
+expected_files = [
+    SKILL_DIR / "SKILL.md",
+    SKILL_DIR / "README.md",
+    SKILL_DIR / "references" / "process-bleed.md",
+    SKILL_DIR / "references" / "ai-tells.md",
+    SKILL_DIR / "references" / "qa-scorecard.md",
+    SKILL_DIR / "references" / "voice-calibration.md",
+    SKILL_DIR / "scripts" / "copy_scan.py",
+    SKILL_DIR / "tests" / "test-prompts.md",
+]
+for path in expected_files:
+    check(f"exists: {path.relative_to(ROOT)}", path.is_file())
+
+
+# --- 2. SKILL.md frontmatter ------------------------------------------------
+section("SKILL.md frontmatter")
+
+skill_md = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
+fm = parse_frontmatter(skill_md)
+check("has frontmatter name", "name" in fm)
+check("has frontmatter description", "description" in fm)
+check(
+    "name matches folder",
+    fm.get("name") == SKILL_DIR.name,
+    f"frontmatter name={fm.get('name')!r}, folder={SKILL_DIR.name!r}",
+)
+desc_len = len(fm.get("description", ""))
+check(
+    "description within practical length (<=1024)",
+    0 < desc_len <= 1024,
+    f"length={desc_len}",
+)
+
+
+# --- 3. Referenced files actually exist -------------------------------------
+section("Internal references resolve")
+
+for ref in ["references/process-bleed.md", "references/ai-tells.md",
+            "references/qa-scorecard.md", "references/voice-calibration.md",
+            "scripts/copy_scan.py"]:
+    check(f"SKILL.md mentions {ref}", ref in skill_md)
+
+
+# --- 4. Scanner compiles ----------------------------------------------------
+section("Scanner compiles")
+
+compile_proc = subprocess.run(
+    [sys.executable, "-m", "py_compile", str(SCANNER)],
+    capture_output=True, text=True,
+)
+check("copy_scan.py compiles", compile_proc.returncode == 0, compile_proc.stderr.strip())
+
+
+def run_scanner(text: str) -> dict:
+    proc = subprocess.run(
+        [sys.executable, str(SCANNER)],
+        input=text, capture_output=True, text=True,
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(f"scanner failed: {proc.stderr}")
+    return json.loads(proc.stdout)
+
+
+# --- 5. Scanner flags a known-bad draft -------------------------------------
+section("Scanner flags a bad draft")
+
+bad = (
+    "Based on our discussion, in this guide we will explore the framework "
+    "we landed on. Here is the rewritten copy you asked for. Experts say it "
+    "is a world-class, seamless, robust solution that will leverage synergy. "
+    "It's not just fast, it's transformative — truly best-in-class."
+)
+result = run_scanner(bad)
+summary = result["summary"]
+warnings = " ".join(result["warnings"]).lower()
+
+check("flags process bleed", summary.get("process_bleed", 0) > 0)
+check("flags assistant wrapper", summary.get("assistant_wrapper", 0) > 0)
+check("flags em dash", summary.get("dash_usage", 0) > 0)
+check("flags vague authority", summary.get("vague_authority", 0) > 0)
+check("flags hype cluster", summary.get("generic_hype", 0) >= 3)
+check("flags formulaic structure", summary.get("formulaic_structure", 0) > 0)
+check("emits human-readable warnings", len(result["warnings"]) >= 4)
+check("warning text mentions process", "process" in warnings)
+
+
+# --- 6. Scanner stays quiet on clean copy -----------------------------------
+section("Scanner stays quiet on clean copy")
+
+clean = (
+    "The app saves your work every minute. You can export any project to CSV "
+    "in one click. Setup takes about five minutes on a fresh machine."
+)
+clean_result = run_scanner(clean)
+problem_groups = {"process_bleed", "assistant_wrapper", "dash_usage",
+                  "vague_authority", "formulaic_structure"}
+clean_hits = {g: clean_result["summary"].get(g, 0) for g in problem_groups}
+check(
+    "no problem warnings on clean copy",
+    all(v == 0 for v in clean_hits.values()),
+    f"unexpected hits: { {k: v for k, v in clean_hits.items() if v} }",
+)
+
+
+# --- Summary ----------------------------------------------------------------
+print(f"\n{'=' * 48}")
+if failures:
+    print(f"FAILED: {len(failures)} check(s), {passes} passed")
+    for f in failures:
+        print(f"  - {f}")
+    sys.exit(1)
+
+print(f"OK: all {passes} checks passed")
