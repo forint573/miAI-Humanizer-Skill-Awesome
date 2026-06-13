@@ -31,7 +31,7 @@ Cleanup: improve an existing draft. Preserve the meaning, claims, caveats, secti
 
 Use the lightest mode that solves the task. Do not perform a full rescue rewrite when a clean polish is enough.
 
-## The one test
+## The sentence test
 
 Apply this question to every sentence:
 
@@ -71,6 +71,8 @@ Four tests catch clean nothing:
 2. Negation test. Would anyone claim the opposite? "Committed to quality" is empty because no one sells low quality. Make a claim a real competitor might refuse to make, then back it.
 3. So-what ladder. Ask "so what?" of each fact until you reach the consequence the reader can act on or feel. Lead with that consequence, not the bare feature.
 4. Real question. Answer the question under the stated one, usually about risk, status, or effort. "Is it secure?" often means "will I be blamed if this leaks?"
+
+Earn the claim. Show the mechanism that makes a claim true so the reader can see why, instead of asserting it and asking them to trust you. Demonstrated beats declared, and showing the reasoning is what turns persuasion into something the reader actually learns. Draw the mechanism from the true material; if you do not know why it works, flag it rather than inventing a reason.
 
 Keep the tension. Slop is frictionless: everything is great, nothing is hard, no choice has a cost, which is why it is forgettable. Name the hard part, the limit, and who the product is not for. That honesty is a stronger trust signal than any superlative, and it costs you nothing you should have claimed anyway.
 

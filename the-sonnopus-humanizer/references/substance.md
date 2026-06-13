@@ -48,7 +48,16 @@ A claim is real if a reasonable competitor might genuinely refuse to make it.
 
 A competitor might honestly decline that promise. It has a cost. That cost is what makes it worth saying. (And the specifics are briefed, or they are placeholders.)
 
-### 3. The so-what ladder (compress a fact to its consequence)
+### 3. Earn the claim (show the mechanism)
+
+A claim the reader has to take on faith is worth little, however bold. The valuable version shows the mechanism, so the reader sees why it is true and could check it. Demonstrated beats declared. This is the line between copy that only persuades and writing that actually advances what the reader knows.
+
+- Asserted: "Our approach dramatically improves retention."
+- Earned: "Retention improves because the first email arrives while the user is still in the product, not the next morning. People finish setup when the next step is in front of them, not buried in an inbox."
+
+The earned version makes the same claim and hands the reader the reasoning. They can agree, disagree, or test it. That is what makes words valuable rather than merely convincing: the reader leaves understanding something, not just believing you. Take the mechanism from the true material. If you do not know why it works, say so and find out. Do not dress an assertion up as a reason.
+
+### 4. The so-what ladder (compress a fact to its consequence)
 
 A bare fact is rarely the point. The point is what the fact does for the reader. Find it by asking "so what?" until the answer is something the reader can act on or feel.
 
@@ -59,7 +68,7 @@ A bare fact is rarely the point. The point is what the fact does for the reader.
 
 Same fact, no addition. The value was always inside it. You compressed down to the consequence instead of stopping at the feature.
 
-### 4. The real question (answer the one under the one)
+### 5. The real question (answer the one under the one)
 
 Weak copy answers the stated question. Strong copy answers the real one underneath it, which is usually about risk, status, or effort.
 
@@ -70,7 +79,7 @@ Weak copy answers the stated question. Strong copy answers the real one undernea
 
 The strong answer addresses the fear, not the FAQ. Feeling understood is the actual mechanism of trust, and it is the thing generic copy can never fake.
 
-### 5. Keep the tension (stakes, limits, who it's not for)
+### 6. Keep the tension (stakes, limits, who it's not for)
 
 Slop is frictionless. Everything is great, nothing is hard, no choice has a cost. That is exactly why it is forgettable. Real writing names the hard part: the tradeoff, the limit, the person this is not for.
 
@@ -79,7 +88,7 @@ Slop is frictionless. Everything is great, nothing is hard, no choice has a cost
 
 Naming who it is not for is one of the strongest trust signals in copy, and slop never does it. You are not inventing a flaw. You are being honest about the real boundary, which makes every other claim more believable.
 
-### 6. Density (one exact word beats three vague ones)
+### 7. Density (one exact word beats three vague ones)
 
 Vagueness is unfinished thinking. When a sentence sprawls, the thought underneath is not done yet. Intelligence reads as effortless because the work happened before the words: the writer found the exact distinction, so the sentence got short.
 
@@ -88,7 +97,7 @@ Vagueness is unfinished thinking. When a sentence sprawls, the thought underneat
 
 The fix for a sprawling sentence is not to polish it. It is to figure out what you actually mean, then say only that.
 
-### 7. Cliché is a placeholder for a thought you haven't had yet
+### 8. Cliché is a placeholder for a thought you haven't had yet
 
 "At the end of the day," "move the needle," "best-in-class," "take it to the next level." Each one marks a spot where the writer reached for the nearest familiar phrase instead of the true specific. Removing the cliché is easy. The work is replacing it with what you actually meant.
 
@@ -116,6 +125,7 @@ Before shipping, the strongest lines in the piece should do at least one of thes
 - Make the reader think "I hadn't seen it that way," "that's exactly right," or "now I know what to do."
 - Say something only this writer, about this thing, could say.
 - Make a claim a real competitor might refuse to make, and back it.
+- Show why a claim is true, so the reader could check it, instead of asking them to take it on faith.
 - Name the hard part instead of pretending there isn't one.
 - Compress a known fact down to the consequence the reader actually cares about.
 

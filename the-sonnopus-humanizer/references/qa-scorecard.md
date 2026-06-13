@@ -56,7 +56,7 @@ Use this to judge whether a finished piece is production-ready. Score each categ
 
 1: Some real points, but several sections are generic or stop at the feature instead of the consequence.
 
-2: The copy says something specific, defensible, and non-obvious. Key lines pass the swap and negation tests, lead with the consequence, and name the real tension. Nothing was invented to get there.
+2: The copy says something specific, defensible, and non-obvious. Key lines pass the swap and negation tests, lead with the consequence, show the mechanism instead of asserting it, and name the real tension. Nothing was invented to get there.
 
 ## 8. Meaning preservation
 

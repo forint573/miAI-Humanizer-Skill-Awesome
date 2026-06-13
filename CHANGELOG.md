@@ -15,11 +15,13 @@ always comes from the true material. Nothing is invented to add it.
 
 ### Added
 - `references/substance.md`: the intelligence layer. Defines the "clean nothing"
-  failure and the tests that catch it (the swap test, the negation test, the
-  so-what ladder, the real question), the keep-the-tension rule, the
-  cliché-to-truth move, mode-specific guidance, a voice guard, and worked
-  examples, all under one hard boundary: insight is compression of true
-  material, never invention.
+  failure and the moves that catch it (the swap test, the negation test, earning
+  a claim by showing the mechanism, the so-what ladder, the real question), the
+  keep-the-tension rule, the cliché-to-truth move, mode-specific guidance, a
+  voice guard, and worked examples, all under one hard boundary: insight is
+  compression of true material, never invention. Earning a claim by showing why
+  it is true, rather than asserting it, is the move that turns persuasion into
+  something the reader actually learns.
 - `SKILL.md`: a "Make it worth reading" section carrying the four core substance
   tests and the insight-not-invention rule, a reframed mission that names the
   subtractive and additive jobs as co-equal, a substance pass in the drafting
