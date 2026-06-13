@@ -7,6 +7,8 @@ description: "Write, finalize, and sharpen reader-facing marketing and long-form
 
 Use this skill to draft, finalize, or clean up reader-facing copy so it sounds like a specific human wrote it, says something worth reading, stays truthful, and never exposes the planning process that produced it.
 
+Its highest-value use is turning a quick sketch or half-built draft into a consumable template: clean, specific, honestly sourced, voiced, with visible placeholders where proof is missing. A human then finishes that template into final prose. The skill does the mechanical and structural work so a person can do the judgment work. Treat the output as a strong draft for human finishing, not as publish-without-review copy.
+
 The skill has two jobs, and clean copy only does the first one.
 
 The first job is subtractive: keep the finished piece about the reader, the product, the offer, the proof, the objection, and the next step. Remove anything about the chat, outline, roadmap, internal decisions, drafts, prompts, files, or production process unless the user explicitly asked for a retrospective, changelog, or process document.
@@ -27,7 +29,7 @@ Do not use it for code, raw data, tables, changelogs, release notes, legal terms
 
 Drafting: write new copy from the brief. Do not invent facts the brief did not give you.
 
-Finalization: turn a planned or half-built artifact into publishable copy. This is the highest-value use. Strip scaffolding, planning residue, assistant wrapper text, and outline language.
+Finalization: turn a planned or half-built artifact into a clean, consumable template ready for human finishing. This is the highest-value use. Strip scaffolding, planning residue, assistant wrapper text, and outline language.
 
 Cleanup: improve an existing draft. Preserve the meaning, claims, caveats, sections, and proportions unless the user asks for a deeper rewrite.
 
@@ -127,6 +129,19 @@ With no sample, default to grounded, concrete, direct, and mildly opinionated on
 
 Do not over-edit good human writing. A single formal word, transition, salutation, or dash is not proof of AI writing. Act on clear process bleed, factual risk, or clusters of generic prose.
 
+## Pairing with translation
+
+When the output needs to be Hungarian, this skill chains with `translating-english-to-hungarian`, which renders English as idiomatic, native Hungarian rather than a word-for-word calque.
+
+- Humanize in English first, then translate. The chain is sketch, to consumable English template (this skill), to native Hungarian (the translation skill), to final prose (a human).
+- Interpret, do not transliterate. Aim for what a Hungarian writer would have written. Flag English-only wordplay that will not survive sense-for-sense translation.
+- Pass the register with the voice. Casual or founder-led English should become `te`; formal or institutional English stays `ön`, the translator's default. Note the intended register outside the copy.
+- Placeholders pass through untranslated, like code and brand names. The human fills them during finishing.
+- Integrity travels with the meaning: the Hungarian must not read more certain than the English, must keep every caveat, and must add no proof, scarcity, or urgency the source lacked.
+- Hungarian typography wins in the translated output (Hungarian quotation marks, decimal comma, date format). The dash default is an English-output rule.
+
+For the full handoff, use `references/translation-handoff.md`.
+
 ## Workflow
 
 For drafting or finalization:
@@ -144,6 +159,8 @@ For cleanup:
 4. Scan for clean nothing: lines that pass every check but say nothing only this writer could say. Sharpen them from the real material, or flag the gap with a placeholder.
 5. Rewrite with the smallest effective edit, and never one that makes a claim more believable than it is true.
 6. Preserve meaning. If you remove or restructure something for strategy reasons, say so outside the rewritten copy.
+
+The output of either path is a template for a human to finish, not publish-ready copy. If it needs to be Hungarian, translate last, after the harm check, and pass the register. See `references/translation-handoff.md`.
 
 ## Before shipping
 
@@ -170,4 +187,5 @@ For long deliverables, you may run `scripts/copy_scan.py` as a warning net. Trea
 - `references/ai-tells.md`: diagnostic catalog for generic AI prose. Use it on clusters, not isolated words.
 - `references/qa-scorecard.md`: score finished copy before shipping or when testing the skill.
 - `references/voice-calibration.md`: quick voice matching guide.
+- `references/translation-handoff.md`: how to chain with `translating-english-to-hungarian` for interpretive Hungarian, including register, placeholders, and integrity across languages.
 - `scripts/copy_scan.py`: optional heuristic scanner for long drafts.

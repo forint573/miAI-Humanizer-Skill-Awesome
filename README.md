@@ -15,7 +15,7 @@
 
 ## TL;DR
 
-The Sonnopus Humanizer drafts and de-slops marketing and long-form copy: landing pages, e-books, reports, case studies, sales pages, product copy, and founder notes. It keeps the writing about the reader and the product, it refuses to invent facts, and it preserves a real voice instead of flattening it into house style. It also does the part most humanizers skip: it makes the copy say something. Clean but empty is a failure here, not a finish line.
+The Sonnopus Humanizer drafts and de-slops marketing and long-form copy: landing pages, e-books, reports, case studies, sales pages, product copy, and founder notes. Its main job is to turn a quick sketch into a consumable template, clean, specific, voiced, and honestly sourced, that a human finishes into final prose. It keeps the writing about the reader and the product, it refuses to invent facts, and it preserves a real voice instead of flattening it into house style. It also does the part most humanizers skip: it makes the copy say something. Clean but empty is a failure here, not a finish line.
 
 It is built for copywriters, marketers, and founders who draft with AI and want copy that does not read like AI. It is not an AI-detector bypass. It makes weak copy read like a person actually wrote it, and worth the reader's time once they did.
 
@@ -79,6 +79,18 @@ So this version ships the firewall that the persuasion demands. Three rules, in 
 - **Authenticity is never manufactured.** The skill humanizes your real copy. It will not invent reviews, testimonials, social proof, scarcity, or urgency, and it will not put words in a real person's mouth. Missing proof becomes a placeholder, exactly like a missing metric.
 
 This is also why it is not an AI-detector bypass. The goal is honest writing that reads well, not deception that reads human. The standard the whole skill answers to: a reader who trusts this copy because it is clear and human should be safe in trusting it.
+
+## Sketch in, template out
+
+This skill is most useful as a force multiplier for a human writer, not a replacement for one. You give it a quick sketch or a half-built draft. It returns a consumable template: the process bleed stripped, the structure sound, the claims specific and within the evidence, the voice intact, and visible placeholders wherever real proof is missing. A person then finishes that template into final prose, filling the placeholders and making the last calls.
+
+That is the honest scope. The skill does the mechanical and structural work, fast. It does not replace the human judgment that turns a strong template into something worth publishing, and it is not meant to.
+
+### Use it with the Hungarian translation skill
+
+If your final copy needs to be Hungarian, chain this with [`translating-english-to-hungarian`](https://github.com/forint573/ENG-HUN-Translation-skill), which renders English as idiomatic, native Hungarian instead of a literal calque.
+
+Humanize in English first, then translate. The chain is sketch, to a consumable English template here, to native Hungarian there, to final prose by a human. The handoff carries the voice (including the formal `ön` or informal `te` register), leaves placeholders untranslated for the human to fill, and keeps the integrity rules across the language line, so the Hungarian never reads more certain than the English or drops a caveat for flow. The details are in `references/translation-handoff.md`.
 
 ## Install
 
@@ -145,7 +157,8 @@ the-sonnopus-humanizer/
 │   ├── integrity.md              # the safety layer: do more good than harm
 │   ├── ai-tells.md               # diagnostic catalog of generic AI prose
 │   ├── qa-scorecard.md           # 10-category, 0 to 2 readiness score
-│   └── voice-calibration.md      # matching a sample or brand voice
+│   ├── voice-calibration.md      # matching a sample or brand voice
+│   └── translation-handoff.md    # chaining with the Hungarian translation skill
 ├── scripts/
 │   └── copy_scan.py              # optional heuristic scanner
 └── tests/
@@ -179,6 +192,12 @@ Both, and the second part is the point. Removing tells leaves a gap, and a gap f
 
 **Can it be used to make false claims more convincing, or to fake reviews and urgency?**
 No, and preventing that is the job of the integrity layer. The skill makes a claim more persuasive only when the evidence is already there. It never raises certainty past the source, never strips a safety or legal caveat to add punch, and never manufactures reviews, social proof, scarcity, or urgency. Missing proof becomes a placeholder, and the scanner flags high-liability claims and pressure tactics so you verify them or cut them. See `references/integrity.md`.
+
+**Does it produce final, ready-to-publish copy?**
+No, and it is not trying to. It produces a consumable template: clean, specific, voiced, and honestly sourced, with visible placeholders where proof is missing. A human finishes it into final prose. The skill does the mechanical and structural work so you can do the judgment.
+
+**Can I use it with the Hungarian translation skill?**
+Yes. Chain it with [`translating-english-to-hungarian`](https://github.com/forint573/ENG-HUN-Translation-skill). Humanize in English first, then translate, so the Hungarian comes out idiomatic and native rather than a literal calque. The handoff passes the voice and the `ön` or `te` register, keeps placeholders untranslated, and carries the integrity rules across languages. See `references/translation-handoff.md`.
 
 ## Contributing
 

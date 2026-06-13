@@ -67,6 +67,7 @@ expected_files = [
     SKILL_DIR / "references" / "ai-tells.md",
     SKILL_DIR / "references" / "qa-scorecard.md",
     SKILL_DIR / "references" / "voice-calibration.md",
+    SKILL_DIR / "references" / "translation-handoff.md",
     SKILL_DIR / "scripts" / "copy_scan.py",
     SKILL_DIR / "tests" / "test-prompts.md",
 ]
@@ -100,7 +101,7 @@ section("Internal references resolve")
 for ref in ["references/process-bleed.md", "references/substance.md",
             "references/integrity.md", "references/ai-tells.md",
             "references/qa-scorecard.md", "references/voice-calibration.md",
-            "scripts/copy_scan.py"]:
+            "references/translation-handoff.md", "scripts/copy_scan.py"]:
     check(f"SKILL.md mentions {ref}", ref in skill_md)
 
 

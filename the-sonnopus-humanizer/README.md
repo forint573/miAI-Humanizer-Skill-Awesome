@@ -1,6 +1,6 @@
 # The Sonnopus Humanizer
 
-A Claude Agent Skill for drafting, finalizing, and humanizing reader-facing marketing and long-form copy, and for making sure that copy actually says something worth reading.
+A Claude Agent Skill for drafting, finalizing, and humanizing reader-facing marketing and long-form copy, and for making sure that copy actually says something worth reading. Its main job is to turn a quick sketch into a consumable template that a human finishes into final prose.
 
 It stops two failures. The first: the finished deliverable starts narrating the hidden production process behind it, mentioning the chat, outline, roadmap, prior draft, internal decision, or scaffold instead of speaking to the reader about the product, offer, proof, objection, and next step. The second: the copy comes out clean but empty, grammatically perfect and saying nothing only this writer could say. Removing the first failure without fixing the second just produces tidy nothing.
 
@@ -8,7 +8,7 @@ And it does both behind a firewall, because a humanizer is a persuasion amplifie
 
 ## What this version optimizes
 
-The package is built around eight choices:
+The package is built around nine choices:
 
 - Short invocation metadata, so the model can trigger the skill reliably.
 - Lean `SKILL.md`, so the active instruction layer is clear for both Sonnet and Opus.
@@ -17,6 +17,7 @@ The package is built around eight choices:
 - A substance layer, so de-slopping adds a specific, defensible point instead of leaving clean nothing, always drawn from the true material and never invented.
 - An integrity layer, so the persuasion it adds never outruns the evidence, real caveats survive, and proof, scarcity, urgency, and a real person's words are never faked.
 - Voice preservation, so it improves copy without flattening it into one house style.
+- Translation-ready, so the English template hands off cleanly to `translating-english-to-hungarian` for interpretive, native Hungarian instead of a literal calque.
 - Optional scanner, so long deliverables can be checked for leftover process bleed, wrapper text, empty claims, high-liability claims, and manufactured pressure.
 
 ## Core principles
@@ -54,6 +55,7 @@ Use `tests/test-prompts.md`. The most important checks:
 5. It preserves a provided voice sample rather than forcing a generic style.
 6. It turns clean-but-empty copy into specific, defensible points instead of swapping hype words for plainer ones.
 7. It never makes a claim more certain than the source, strips a needed caveat, or manufactures reviews, scarcity, or urgency.
+8. With `translating-english-to-hungarian`, it humanizes in English first, passes the register, and leaves placeholders intact for native Hungarian.
 
 ## Optional scanner
 

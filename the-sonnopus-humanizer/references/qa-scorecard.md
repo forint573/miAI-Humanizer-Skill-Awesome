@@ -97,3 +97,5 @@ Ten categories, 0 to 2 each, 20 maximum.
 A 0 in Truthfulness, Substance, or Integrity caps the result at "needs another pass," whatever the total. Clean copy that says nothing is not publishable; a sharp piece built on an invented fact is not publishable; and copy that reads more trustworthy than it is does the most harm of all.
 
 Do not chase a higher score by inventing details or flattening real voice. A truthful, voice-true 16 beats a polished, fabricated 18, and a piece that says something real beats a piece that only avoids mistakes.
+
+Even a 20 is a template for a human to finish, not copy to ship unread. The score measures how ready the template is for that person, not whether it can skip them.

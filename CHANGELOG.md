@@ -18,6 +18,11 @@ load-bearing caveats survive every edit, and the skill humanizes honest copy
 but refuses to manufacture proof, scarcity, urgency, or a real person's words.
 The value always comes from the true material. Nothing is invented to add it.
 
+This release also states the skill's honest scope plainly across the files: it
+turns a quick sketch into a consumable template that a human finishes into final
+prose, not publish-ready copy, and it chains with the Hungarian translation
+skill for interpretive, native Hungarian rather than a literal calque.
+
 ### Added
 - `references/substance.md`: the intelligence layer. Defines the "clean nothing"
   failure and the moves that catch it (the swap test, the negation test, earning
@@ -51,9 +56,15 @@ The value always comes from the true material. Nothing is invented to add it.
   absolutes, medical, financial, or regulated, #1 or world's-best), and a
   `manufactured_pressure` detector for fabricated scarcity, urgency, and social
   proof. Heuristic, like the rest of the scanner.
-- `tests/`: a trigger prompt and a clean-nothing evaluation sample, plus
-  automated checks for the new reference files and the empty-claim, risky-claim,
-  and manufactured-pressure detectors.
+- `references/translation-handoff.md`: how to chain with
+  `translating-english-to-hungarian`. Humanize in English first, translate last
+  and interpretively, pass the formal or informal register (`ön` or `te`) with
+  the voice, keep placeholders untranslated, carry the integrity rules across
+  the language line, and let Hungarian typography win in the Hungarian output.
+- `tests/`: a clean-nothing sample, an overclaim and manufactured-pressure
+  sample, trigger prompts for substance and integrity work, plus automated
+  checks for the new reference files and the empty-claim, risky-claim, and
+  manufactured-pressure detectors.
 
 ### Changed
 - The skill description now names the additive job (says something worth
@@ -64,6 +75,10 @@ The value always comes from the true material. Nothing is invented to add it.
   "Meaning preservation" to free the word "substance" for the new value category.
 - Root and skill READMEs reframed around two failures, two tests, and the
   do-more-good-than-harm standard.
+- Positioning made explicit across the files: the skill turns quick sketches
+  into consumable templates that humans finish into final prose, not
+  publish-ready copy. Finalization mode, the workflows, and both READMEs now
+  say so.
 
 ### Kept
 - Every 1.0 guardrail: fact safety, voice preservation, the lightest effective

@@ -18,6 +18,10 @@ Use these after installation to check trigger behavior and output quality.
 
 7. Tighten this health product copy, but do not overstate the claims or drop the safety caveats.
 
+8. Turn this rough sketch into a clean, consumable template I can finish, and mark any placeholders.
+
+9. Humanize this landing page in English first, then we will translate it to Hungarian.
+
 ## Should not trigger
 
 1. Refactor this Python function.
