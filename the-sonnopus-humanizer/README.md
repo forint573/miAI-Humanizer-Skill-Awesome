@@ -1,27 +1,34 @@
 # The Sonnopus Humanizer
 
-A Claude Agent Skill for drafting, finalizing, and humanizing reader-facing marketing and long-form copy.
+A Claude Agent Skill for drafting, finalizing, and humanizing reader-facing marketing and long-form copy, and for making sure that copy actually says something worth reading.
 
-It exists to stop one common failure: the finished deliverable starts narrating the hidden production process behind it. The copy mentions the chat, outline, roadmap, prior draft, internal decision, or scaffold instead of speaking directly to the reader about the product, offer, proof, objection, and next step.
+It stops two failures. The first: the finished deliverable starts narrating the hidden production process behind it, mentioning the chat, outline, roadmap, prior draft, internal decision, or scaffold instead of speaking to the reader about the product, offer, proof, objection, and next step. The second: the copy comes out clean but empty, grammatically perfect and saying nothing only this writer could say. Removing the first failure without fixing the second just produces tidy nothing.
 
 ## What this version optimizes
 
-The package is built around six choices:
+The package is built around seven choices:
 
 - Short invocation metadata, so the model can trigger the skill reliably.
 - Lean `SKILL.md`, so the active instruction layer is clear for both Sonnet and Opus.
 - Deeper references, so the model can inspect examples and diagnostics only when useful.
 - Strong fact safety, so the skill never invents metrics, testimonials, proof, awards, or claims.
+- A substance layer, so de-slopping adds a specific, defensible point instead of leaving clean nothing, always drawn from the true material and never invented.
 - Voice preservation, so it improves copy without flattening it into one house style.
-- Optional scanner, so long deliverables can be checked for leftover process bleed and wrapper text.
+- Optional scanner, so long deliverables can be checked for leftover process bleed, wrapper text, and empty claims.
 
-## Core principle
+## Core principles
 
 Every sentence should pass this test:
 
 > Would this sentence make sense to a reader who never saw the project, chat, plan, outline, prompt, or drafting process?
 
 If not, it is process bleed. Cut it or rewrite it around the reader, product, offer, proof, objection, or next step.
+
+And every sentence that survives should pass a second test:
+
+> Could this exact sentence appear on a competitor's page, or about a different product?
+
+If yes, it is clean nothing. Replace it with the specific, true thing only this writer could say, taken from the real material. The skill removes what should not be there and supplies what should, without ever inventing a fact to do it.
 
 ## Installation
 
@@ -36,6 +43,7 @@ Use `tests/test-prompts.md`. The most important checks:
 3. It replaces missing proof with visible placeholders instead of inventing facts.
 4. It removes process bleed without deleting real meaning.
 5. It preserves a provided voice sample rather than forcing a generic style.
+6. It turns clean-but-empty copy into specific, defensible points instead of swapping hype words for plainer ones.
 
 ## Optional scanner
 
@@ -45,4 +53,4 @@ Run:
 python scripts/copy_scan.py draft.txt
 ```
 
-The script flags likely process bleed, wrapper text, dash usage, vague authority, and hype clusters. It is intentionally heuristic. Treat its output as warnings, not verdicts.
+The script flags likely process bleed, wrapper text, dash usage, vague authority, hype clusters, and empty claims that fail the negation test. It is intentionally heuristic. Treat its output as warnings, not verdicts.

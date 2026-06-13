@@ -1,13 +1,17 @@
 ---
 name: the-sonnopus-humanizer
-description: "Write, finalize, and clean up reader-facing marketing and long-form copy (landing pages, e-books, reports, case studies, sales and product copy, founder notes) so it reads like a specific human or brand wrote it, stays about the reader and product, and never exposes the planning process. Apply it proactively when finalizing a deliverable at the end of a long build session, where roadmaps, outlines, internal decisions, scaffold files, or chat history leak into the output. Also use when asked to humanize, de-slop, make something sound less like AI, rewrite naturally, tighten, polish, or clean up prose. It preserves facts, never inventing numbers, names, or results, and edits lightly without flattening real voice. Not for code, data, changelogs, release notes, legal terms, or casual chat."
+description: "Write, finalize, and sharpen reader-facing marketing and long-form copy (landing pages, e-books, reports, case studies, sales and product copy, founder notes) so it reads like a specific human wrote it and actually says something worth reading: specific, defensible, and non-obvious, not clean but empty. Apply it to humanize, de-slop, make something sound less like AI, rewrite naturally, tighten, polish, clean up, sharpen, or add substance to a draft. It removes process bleed (roadmaps, outlines, internal decisions, scaffolding, and chat residue that leak from a long build session), preserves facts (never inventing numbers, names, or results, using visible placeholders instead), keeps a real voice rather than one house style, and pushes generic claims toward the specific, true, load-bearing point. Use it proactively when finalizing a deliverable at the end of a long build. Not for code, data, changelogs, release notes, legal terms, or casual chat."
 ---
 
 # The Sonnopus Humanizer
 
-Use this skill to draft, finalize, or clean up reader-facing copy so it sounds like a specific human or brand wrote it, stays truthful, and never exposes the planning process that produced it.
+Use this skill to draft, finalize, or clean up reader-facing copy so it sounds like a specific human wrote it, says something worth reading, stays truthful, and never exposes the planning process that produced it.
 
-The core job is simple: keep the finished piece about the reader, the product, the offer, the proof, the objection, and the next step. Remove anything about the chat, outline, roadmap, internal decisions, drafts, prompts, files, or production process unless the user explicitly asked for a retrospective, changelog, or process document.
+The skill has two jobs, and clean copy only does the first one.
+
+The first job is subtractive: keep the finished piece about the reader, the product, the offer, the proof, the objection, and the next step. Remove anything about the chat, outline, roadmap, internal decisions, drafts, prompts, files, or production process unless the user explicitly asked for a retrospective, changelog, or process document.
+
+The second job is additive: make the copy worth the reader's time. Copy can pass every cleanliness check in this skill and still say nothing a reader could not have guessed before opening it. That is clean nothing, and it is a failure, not a pass. The standard is not "reads like a human wrote it." It is "a sharp human would be glad they wrote it, and a busy reader is glad they read it." The intelligence comes from the true material, never from inventing an impressive claim. This second job is `references/substance.md`.
 
 ## Scope
 
@@ -57,6 +61,23 @@ Three of the most common, with the move (describe the thing, not the making):
 
 For the full set and the fast scan phrases, use `references/process-bleed.md`.
 
+## Make it worth reading
+
+Removing the slop leaves a gap. Fill it with substance, not with a cleaner version of nothing. The value comes from the true material: the implication the source left unspoken, the connection between two given facts, the precise word for the vague feeling, the real question under the stated one. You never reach outside the material for an impressive claim. When the substance is genuinely missing, flag it with a placeholder and say so. Do not manufacture it.
+
+Four tests catch clean nothing:
+
+1. Swap test. Could this exact sentence appear in a competitor's copy or on a different product? If yes, it carries no information. Replace it with the specific true thing that is only true here: the mechanism, the number, the tradeoff, the named user.
+2. Negation test. Would anyone claim the opposite? "Committed to quality" is empty because no one sells low quality. Make a claim a real competitor might refuse to make, then back it.
+3. So-what ladder. Ask "so what?" of each fact until you reach the consequence the reader can act on or feel. Lead with that consequence, not the bare feature.
+4. Real question. Answer the question under the stated one, usually about risk, status, or effort. "Is it secure?" often means "will I be blamed if this leaks?"
+
+Keep the tension. Slop is frictionless: everything is great, nothing is hard, no choice has a cost, which is why it is forgettable. Name the hard part, the limit, and who the product is not for. That honesty is a stronger trust signal than any superlative, and it costs you nothing you should have claimed anyway.
+
+Substance sharpens the user's point. It does not swap in yours. If making a line land would change what the user is actually claiming, flag it instead of rewriting the argument.
+
+For the full set, the cliché-to-truth move, and worked examples, use `references/substance.md`.
+
 ## Human prose rule
 
 Be specific, vary rhythm, prefer plain constructions, and never fabricate.
@@ -95,16 +116,18 @@ Do not over-edit good human writing. A single formal word, transition, salutatio
 
 For drafting or finalization:
 1. Identify the reader, product, offer, proof, main objection, and next step from the provided material.
-2. Write the deliverable only. Do not put planning notes, rationale, or assistant wrapper inside the copy.
-3. Apply the sentence test, fact safety, voice safety, and dash default.
-4. Deliver clean copy. Put any editorial note outside the deliverable, and only if useful.
+2. Find the point worth making. Run the so-what ladder and the real-question test on the material before you write, so the copy leads with substance instead of backing into it.
+3. Write the deliverable only. Do not put planning notes, rationale, or assistant wrapper inside the copy.
+4. Apply the sentence test, the four substance tests, fact safety, voice safety, and dash default.
+5. Deliver clean copy. Put any editorial note outside the deliverable, and only if useful.
 
 For cleanup:
 1. Scan for process bleed first.
 2. Scan for unsupported specifics and overclaims.
 3. Scan for clusters of AI-flavored prose using `references/ai-tells.md` only as a diagnostic lookup.
-4. Rewrite with the smallest effective edit.
-5. Preserve substance. If you remove or restructure something for strategy reasons, say so outside the rewritten copy.
+4. Scan for clean nothing: lines that pass every check but say nothing only this writer could say. Sharpen them from the real material, or flag the gap with a placeholder.
+5. Rewrite with the smallest effective edit.
+6. Preserve meaning. If you remove or restructure something for strategy reasons, say so outside the rewritten copy.
 
 ## Before shipping
 
@@ -112,6 +135,7 @@ Check these in order:
 
 - No sentence refers to the chat, request, prompt, project plan, outline, file system, internal decisions, or drafting process.
 - Every paragraph serves the reader's situation, product behavior, offer, proof, objection, or next step.
+- No section is clean nothing. The strongest lines pass the swap and negation tests: they say something only this writer could say, and a real competitor might refuse to claim.
 - Every specific is supplied by the input or marked with a visible placeholder.
 - The voice matches the provided sample or the format.
 - Em and en dashes are removed unless an exception applies.
@@ -123,6 +147,7 @@ For long deliverables, you may run `scripts/copy_scan.py` as a warning net. Trea
 ## References
 
 - `references/process-bleed.md`: expanded examples and fast scan phrases.
+- `references/substance.md`: the intelligence layer. How to say something worth reading, with tests and worked examples. Use it whenever copy is clean but weightless.
 - `references/ai-tells.md`: diagnostic catalog for generic AI prose. Use it on clusters, not isolated words.
 - `references/qa-scorecard.md`: score finished copy before shipping or when testing the skill.
 - `references/voice-calibration.md`: quick voice matching guide.

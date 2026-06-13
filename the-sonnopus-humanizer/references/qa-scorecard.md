@@ -50,7 +50,15 @@ Use this to judge whether a finished piece is production-ready. Score each categ
 
 2: The copy is specific, rhythmically varied, plain, and natural.
 
-## 7. Substance preservation
+## 7. Substance (worth reading)
+
+0: Clean nothing. The copy is grammatically fine but says nothing only this writer could say. The strongest lines would survive being pasted onto a competitor's page.
+
+1: Some real points, but several sections are generic or stop at the feature instead of the consequence.
+
+2: The copy says something specific, defensible, and non-obvious. Key lines pass the swap and negation tests, lead with the consequence, and name the real tension. Nothing was invented to get there.
+
+## 8. Meaning preservation
 
 0: Important claims, caveats, or sections were lost.
 
@@ -58,7 +66,7 @@ Use this to judge whether a finished piece is production-ready. Score each categ
 
 2: Meaning, caveats, and structure were preserved unless the user asked otherwise.
 
-## 8. Output hygiene
+## 9. Output hygiene
 
 0: The answer includes assistant wrapper text inside the deliverable.
 
@@ -68,12 +76,16 @@ Use this to judge whether a finished piece is production-ready. Score each categ
 
 ## Interpretation
 
-15 to 16: publishable after normal human review.
+Nine categories, 0 to 2 each, 18 maximum.
 
-12 to 14: good draft, needs one more pass.
+17 to 18: publishable after normal human review.
 
-9 to 11: useful direction, not production-ready.
+13 to 16: good draft, needs one more pass.
 
-0 to 8: rewrite from source.
+10 to 12: useful direction, not production-ready.
 
-Do not chase a higher score by inventing details or flattening real voice. A truthful, voice-true 14 beats a polished, fabricated 16.
+0 to 9: rewrite from source.
+
+A 0 in Truthfulness or Substance caps the result at "needs another pass," whatever the total. Clean, truthful, voice-true copy that says nothing is not publishable, and neither is a sharp piece built on an invented fact.
+
+Do not chase a higher score by inventing details or flattening real voice. A truthful, voice-true 15 beats a polished, fabricated 17, and a piece that says something real beats a piece that only avoids mistakes.

@@ -62,6 +62,7 @@ expected_files = [
     SKILL_DIR / "SKILL.md",
     SKILL_DIR / "README.md",
     SKILL_DIR / "references" / "process-bleed.md",
+    SKILL_DIR / "references" / "substance.md",
     SKILL_DIR / "references" / "ai-tells.md",
     SKILL_DIR / "references" / "qa-scorecard.md",
     SKILL_DIR / "references" / "voice-calibration.md",
@@ -95,9 +96,9 @@ check(
 # --- 3. Referenced files actually exist -------------------------------------
 section("Internal references resolve")
 
-for ref in ["references/process-bleed.md", "references/ai-tells.md",
-            "references/qa-scorecard.md", "references/voice-calibration.md",
-            "scripts/copy_scan.py"]:
+for ref in ["references/process-bleed.md", "references/substance.md",
+            "references/ai-tells.md", "references/qa-scorecard.md",
+            "references/voice-calibration.md", "scripts/copy_scan.py"]:
     check(f"SKILL.md mentions {ref}", ref in skill_md)
 
 
@@ -142,6 +143,19 @@ check("flags hype cluster", summary.get("generic_hype", 0) >= 3)
 check("flags formulaic structure", summary.get("formulaic_structure", 0) > 0)
 check("emits human-readable warnings", len(result["warnings"]) >= 4)
 check("warning text mentions process", "process" in warnings)
+
+
+# --- 5b. Scanner flags empty claims -----------------------------------------
+section("Scanner flags empty claims")
+
+empty = (
+    "We are committed to excellence and passionate about quality. Our tailored "
+    "solutions help you succeed and consistently exceed your expectations."
+)
+empty_result = run_scanner(empty)
+empty_warnings = " ".join(empty_result["warnings"]).lower()
+check("flags empty claims", empty_result["summary"].get("empty_claim", 0) >= 2)
+check("empty-claim warning mentions negation", "negation" in empty_warnings)
 
 
 # --- 6. Scanner stays quiet on clean copy -----------------------------------

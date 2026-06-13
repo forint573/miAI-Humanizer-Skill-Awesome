@@ -2,6 +2,8 @@
 
 A lookup for cleanup mode, and for naming *why* something reads as machine-written. This is a diagnostic reference, not a checklist to enforce line by line. The governing principle in SKILL.md decides what to change; this catalog helps you diagnose and fix. Edit on **clusters** of these, not isolated instances. A single item from this list, on its own, usually means nothing.
 
+Every fix here removes something, and removing is only half the job. A cut tell leaves a gap. A gap filled with a cleaner version of nothing is still nothing. When you cut, replace with the specific true thing, not sanitized emptiness. The diagnosis lives here; what to put in the gap lives in `references/substance.md`. Item 33 is the trap to watch for.
+
 Patterns marked **(see SKILL.md)** are covered in the main body because they overlap with process bleed or the hard rule; they are listed here only for completeness.
 
 ## Contents
@@ -37,6 +39,7 @@ Patterns marked **(see SKILL.md)** are covered in the main body because they ove
 30. Diff-anchored writing (see SKILL.md)
 31. Marketing buzzwords and clichés (quick blocklist)
 32. Structural tells from social/marketing copy
+33. Clean nothing (the de-slop trap)
 
 ---
 
@@ -212,3 +215,9 @@ High-signal structures that bleed into web and email copy. (Full LinkedIn-specif
 - **Product-tagline phrasing in prose:** compact feature-copy fragments ("Built for scale," "Hands-free until review") dropped mid-paragraph. Write them as sentences a person would say.
 - **Fake-fascination opener:** "Interestingly," "What's fascinating is," "It's worth noting that" placed in front of an ordinary point to manufacture intrigue. Cut the opener and make the point directly.
 - **Wonder-framing:** "there is a specific kind of magic that happens when," "a love letter to," "the energy in the room." Vague awe that names nothing concrete. Describe the actual experience instead.
+
+### 33. Clean nothing (the de-slop trap)
+The failure mode of this entire catalog. You can remove every tell above and still ship copy that is grammatically perfect and completely empty: no claim only this writer could make, no consequence the reader can act on, nothing a competitor could not also say. Clean is not the same as worth reading. Cutting a tell creates a gap; fill it with the specific true thing, never a sanitized blank, and never an invented one. Diagnosis here, the fix in `references/substance.md`.
+- Before (slop): "We leverage cutting-edge solutions to drive results for our clients."
+- After (clean nothing): "We use modern tools to get results for our clients." (every tell gone, still says nothing)
+- After (substance): "Your reps stop copying leads between four tabs. The CRM writes call notes back to the deal on its own, so follow-up happens the same day instead of next week."

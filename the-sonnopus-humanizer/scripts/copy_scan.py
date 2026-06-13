@@ -3,8 +3,8 @@
 copy_scan.py
 
 A lightweight, heuristic scanner for reader-facing copy. It flags likely process
-bleed, assistant wrapper text, clusters of generic AI-style prose, vague
-authority, and em/en dash usage.
+bleed, assistant wrapper text, clusters of generic AI-style prose, empty claims
+that fail the negation test, vague authority, and em/en dash usage.
 
 It does NOT judge quality. It is a coarse net for long final deliverables, meant
 to catch things a quick read skims past (a leftover dash, a wrapper sentence, a
@@ -47,6 +47,23 @@ PATTERNS = {
         r"\b(unlock|empower|leverage|utilize|streamline|foster|facilitate|harness|cultivate|elevate)\b",
         r"\b(actionable insights|value-add|move the needle|digital transformation|paradigm shift)\b",
     ],
+    # Empty claims: sentences whose opposite nobody would ever advertise. They
+    # pass every grammar check and carry no information (the "clean nothing"
+    # failure). High-precision multi-word phrases; warned only on a cluster.
+    "empty_claim": [
+        r"\b(committed|dedicated|devoted) to (excellence|quality|innovation|your success|customer (?:satisfaction|success)|the highest standards)\b",
+        r"\bpassionate about (quality|excellence|what we do|innovation)\b",
+        r"\b(?:we )?(?:deliver|drive|provide|create) (?:real )?(?:value|results|outcomes|success|impact)\b",
+        r"\b(quality|innovative|tailored|bespoke|end-to-end|turnkey) solutions\b",
+        r"\b(?:help(?:ing|s)? you|helps businesses|empowers? you) (?:to )?(?:succeed|grow|achieve (?:more|your goals|success)|win)\b",
+        r"\byour success is our (?:priority|mission|goal|number one)\b",
+        r"\b(?:put(?:ting)?|puts) (?:our |the )?(?:customers?|clients?) first\b",
+        r"\b(?:exceed|exceeding|surpass) (?:your |our clients'? )?expectations\b",
+        r"\b(?:take|taking|takes) (?:it |your \w+ )?to the next level\b",
+        r"\bgo(?:ing)? above and beyond\b",
+        r"\b(?:tailored|customi[sz]ed) to (?:your|their) (?:unique )?needs\b",
+        r"\b(?:wide|full|broad) range of (?:products|services|solutions|offerings)\b",
+    ],
     "vague_authority": [
         r"\b(experts say|industry leaders agree|research shows|studies suggest|many believe|some argue|it is widely (?:known|believed))\b",
     ],
@@ -66,8 +83,8 @@ PATTERNS = {
     ],
 }
 
-# Groups that are real problems when present (or, for hype, when clustered).
-PROBLEM_GROUPS = {"process_bleed", "assistant_wrapper", "dash_usage", "vague_authority", "generic_hype", "formulaic_structure"}
+# Groups that are real problems when present (or, for hype and empty claims, when clustered).
+PROBLEM_GROUPS = {"process_bleed", "assistant_wrapper", "dash_usage", "vague_authority", "generic_hype", "empty_claim", "formulaic_structure"}
 
 
 def read_text() -> str:
@@ -110,6 +127,8 @@ def scan(text: str) -> dict:
         warnings.append("Vague authority. Name the source, cite it, weaken the claim, or cut it.")
     if counts.get("generic_hype", 0) >= 3:
         warnings.append("Generic hype cluster. Replace mood words with proof, mechanics, or concrete tradeoffs.")
+    if counts.get("empty_claim", 0) >= 2:
+        warnings.append("Empty claims that fail the negation test (committed to excellence, deliver value, help you succeed). Their opposite is something no one would advertise, so they carry no information. Replace each with a specific, defensible point, or cut it. See references/substance.md.")
     if counts.get("formulaic_structure", 0):
         warnings.append("Formulaic AI structure (false contrast, signposting). Rewrite as direct, positive statements.")
 

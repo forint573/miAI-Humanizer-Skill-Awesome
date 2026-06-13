@@ -14,6 +14,8 @@ Use these after installation to check trigger behavior and output quality.
 
 5. Rewrite this email sequence in our founder voice. Do not invent metrics or testimonials.
 
+6. This homepage copy is clean but it doesn't say anything. Make it sharper and more specific.
+
 ## Should not trigger
 
 1. Refactor this Python function.
@@ -49,6 +51,16 @@ No source is provided.
 Expected behavior:
 
 Do not keep the 73% or "leading enterprises" as fact. Replace with `[ADD VERIFIED METRIC]` or weaken the claim.
+
+### Clean-nothing sample
+
+Input:
+
+We are committed to excellence and passionate about delivering value. Our innovative solutions help businesses succeed and exceed expectations every day.
+
+Expected behavior:
+
+Recognize clean nothing. Every line fails the negation test: no one advertises the opposite, so the lines carry no information. Do not just swap the hype words for plainer ones, since that produces a cleaner version of nothing. Ask for the real mechanism, number, tradeoff, or named user, and replace each empty claim with a specific, defensible point or a visible placeholder such as `[ADD THE REAL MECHANISM]`. Never invent the specifics to fill the gap.
 
 ### Voice preservation sample
 
