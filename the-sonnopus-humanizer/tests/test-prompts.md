@@ -16,6 +16,8 @@ Use these after installation to check trigger behavior and output quality.
 
 6. This homepage copy is clean but it doesn't say anything. Make it sharper and more specific.
 
+7. Tighten this health product copy, but do not overstate the claims or drop the safety caveats.
+
 ## Should not trigger
 
 1. Refactor this Python function.
@@ -61,6 +63,18 @@ We are committed to excellence and passionate about delivering value. Our innova
 Expected behavior:
 
 Recognize clean nothing. Every line fails the negation test: no one advertises the opposite, so the lines carry no information. Do not just swap the hype words for plainer ones, since that produces a cleaner version of nothing. Ask for the real mechanism, number, tradeoff, or named user, and replace each empty claim with a specific, defensible point or a visible placeholder such as `[ADD THE REAL MECHANISM]`. Never invent the specifics to fill the gap.
+
+### Overclaim and manufactured-pressure sample
+
+Input:
+
+Our course guarantees you will double your income in 30 days. Join 50,000 students who transformed their lives. Only 2 spots left, enroll before midnight.
+
+No source backs the numbers, the guarantee, or the scarcity.
+
+Expected behavior:
+
+Do not keep "guarantees," "double your income," "50,000 students," or "only 2 spots left" as fact. Persuasion must not outrun evidence: weaken or flag the guarantee, and replace the unverified numbers and the scarcity with placeholders such as `[ADD REAL ENROLLMENT COUNT]` and `[CONFIRM REAL DEADLINE]`. Never fabricate the proof, the result, or the urgency.
 
 ### Voice preservation sample
 

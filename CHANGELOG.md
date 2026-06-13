@@ -7,11 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2026-06-13
 
-The intelligence release. Version 1.0 made copy clean: no AI tells, no process
-bleed, no invented facts, no flattened voice. It could still leave copy that was
-clean and empty. This release adds the second half of the job, making copy say
-something worth reading, while keeping every 1.0 guardrail intact. The value
-always comes from the true material. Nothing is invented to add it.
+The intelligence and integrity release. Version 1.0 made copy clean: no AI
+tells, no process bleed, no invented facts, no flattened voice. This release
+adds two things the first half made necessary. First, the substance to make
+copy worth reading, not just clean. Second, the safety layer the substance
+demands: a humanizer is a persuasion amplifier, and the better it works, the
+more it can harm when the claims are not sound. So the same release that adds
+persuasive force adds the firewall. Persuasion never outruns evidence,
+load-bearing caveats survive every edit, and the skill humanizes honest copy
+but refuses to manufacture proof, scarcity, urgency, or a real person's words.
+The value always comes from the true material. Nothing is invented to add it.
 
 ### Added
 - `references/substance.md`: the intelligence layer. Defines the "clean nothing"
@@ -22,29 +27,43 @@ always comes from the true material. Nothing is invented to add it.
   compression of true material, never invention. Earning a claim by showing why
   it is true, rather than asserting it, is the move that turns persuasion into
   something the reader actually learns.
+- `references/integrity.md`: the do-more-good-than-harm layer the scanner
+  always referenced but the skill never spelled out. Persuasion never outruns
+  evidence, load-bearing caveats (safety, legal, financial, uncertainty)
+  survive every edit, authenticity is never manufactured (no fabricated
+  reviews, social proof, scarcity, urgency, or putting words in a real person's
+  mouth), the substance moves are bounded by all of it, and humanizing is named
+  as the wrong tool for disguising authorship where disclosure is expected.
 - `SKILL.md`: a "Make it worth reading" section carrying the four core substance
-  tests and the insight-not-invention rule, a reframed mission that names the
-  subtractive and additive jobs as co-equal, a substance pass in the drafting
-  and cleanup workflows, and a clean-nothing line in the pre-ship checklist.
-- `references/qa-scorecard.md`: a new "Substance (worth reading)" category, so
-  the new dimension is scored, not just described. A 0 in Truthfulness or
-  Substance now caps the result whatever the total.
+  tests and the insight-not-invention rule, a "Do more good than harm" section
+  carrying the integrity rules, a reframed mission that names the subtractive
+  and additive jobs as co-equal and binds both to the harm rule, a substance
+  pass and a harm check in the workflows, and clean-nothing plus harm lines in
+  the pre-ship checklist.
+- `references/qa-scorecard.md`: new "Substance (worth reading)" and "Integrity
+  (do more good than harm)" categories, so the new dimensions are scored, not
+  just described. A 0 in Truthfulness, Substance, or Integrity caps the result
+  whatever the total.
 - `references/ai-tells.md`: a capstone entry, "Clean nothing (the de-slop
   trap)," and a framing note that cutting a tell is only half the job.
 - `scripts/copy_scan.py`: an `empty_claim` detector for phrases that fail the
-  negation test (committed to excellence, deliver value, help you succeed),
-  warned on a cluster. Heuristic, like the rest of the scanner.
+  negation test, a `risky_claim` detector for high-liability claims (guarantees,
+  absolutes, medical, financial, or regulated, #1 or world's-best), and a
+  `manufactured_pressure` detector for fabricated scarcity, urgency, and social
+  proof. Heuristic, like the rest of the scanner.
 - `tests/`: a trigger prompt and a clean-nothing evaluation sample, plus
-  automated checks for the new reference file and the empty-claim detector.
+  automated checks for the new reference files and the empty-claim, risky-claim,
+  and manufactured-pressure detectors.
 
 ### Changed
 - The skill description now names the additive job (says something worth
   reading: specific, defensible, non-obvious, not clean but empty) alongside the
   humanizing job, without weakening the existing triggers.
-- The scorecard is now nine categories out of eighteen, with rescaled
-  thresholds. "Substance preservation" was renamed "Meaning preservation" to
-  free the word "substance" for the new value category.
-- Root and skill READMEs reframed around two failures and two tests.
+- The scorecard is now ten categories out of twenty, with rescaled thresholds
+  and Integrity as a gating category. "Substance preservation" was renamed
+  "Meaning preservation" to free the word "substance" for the new value category.
+- Root and skill READMEs reframed around two failures, two tests, and the
+  do-more-good-than-harm standard.
 
 ### Kept
 - Every 1.0 guardrail: fact safety, voice preservation, the lightest effective

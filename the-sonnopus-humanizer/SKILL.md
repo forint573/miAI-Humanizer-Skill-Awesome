@@ -1,6 +1,6 @@
 ---
 name: the-sonnopus-humanizer
-description: "Write, finalize, and sharpen reader-facing marketing and long-form copy (landing pages, e-books, reports, case studies, sales and product copy, founder notes) so it reads like a specific human wrote it and actually says something worth reading: specific, defensible, and non-obvious, not clean but empty. Apply it to humanize, de-slop, make something sound less like AI, rewrite naturally, tighten, polish, clean up, sharpen, or add substance to a draft. It removes process bleed (roadmaps, outlines, internal decisions, scaffolding, and chat residue that leak from a long build session), preserves facts (never inventing numbers, names, or results, using visible placeholders instead), keeps a real voice rather than one house style, and pushes generic claims toward the specific, true, load-bearing point. Use it proactively when finalizing a deliverable at the end of a long build. Not for code, data, changelogs, release notes, legal terms, or casual chat."
+description: "Write, finalize, and sharpen reader-facing marketing and long-form copy (landing pages, e-books, reports, case studies, sales and product copy, founder notes) so it reads like a specific human wrote it and actually says something worth reading: specific, defensible, and non-obvious, not clean but empty. Apply it to humanize, de-slop, make something sound less like AI, rewrite naturally, tighten, polish, clean up, sharpen, or add substance to a draft. It removes process bleed (roadmaps, outlines, internal decisions, scaffolding, and chat residue that leak from a long build session), preserves facts (never inventing numbers, names, or results, using visible placeholders instead), keeps a real voice rather than one house style, and pushes generic claims toward the specific, true, load-bearing point without ever making a claim more certain or proven than the source supports. Use it proactively when finalizing a deliverable. Not for code, data, changelogs, release notes, legal terms, or casual chat."
 ---
 
 # The Sonnopus Humanizer
@@ -12,6 +12,8 @@ The skill has two jobs, and clean copy only does the first one.
 The first job is subtractive: keep the finished piece about the reader, the product, the offer, the proof, the objection, and the next step. Remove anything about the chat, outline, roadmap, internal decisions, drafts, prompts, files, or production process unless the user explicitly asked for a retrospective, changelog, or process document.
 
 The second job is additive: make the copy worth the reader's time. Copy can pass every cleanliness check in this skill and still say nothing a reader could not have guessed before opening it. That is clean nothing, and it is a failure, not a pass. The standard is not "reads like a human wrote it." It is "a sharp human would be glad they wrote it, and a busy reader is glad they read it." The intelligence comes from the true material, never from inventing an impressive claim. This second job is `references/substance.md`.
+
+Both jobs are bound by one rule that outranks them: do more good than harm. A humanizer makes copy more persuasive, so it must never make a claim more believable than it is true, strip a caveat the reader needs, or manufacture proof the source does not have. This rule is `references/integrity.md`.
 
 ## Scope
 
@@ -80,6 +82,17 @@ Substance sharpens the user's point. It does not swap in yours. If making a line
 
 For the full set, the cliché-to-truth move, and worked examples, use `references/substance.md`.
 
+## Do more good than harm
+
+Everything above this line makes copy more persuasive. Persuasion lands a true claim and a false one equally well, so the better this skill works, the more it can hurt when the claims are not sound. A polished, human, mechanism-backed lie is trusted in a way slop never is. These rules are the counterweight, and they outrank the rest.
+
+- Persuasion never outruns evidence. You may make a claim clearer. You may not make it more certain, proven, universal, or specific than the source supports. Watch quiet escalations: "may reduce" to "eliminates," "some users" to "everyone," "in our test" to "guaranteed." If a sentence got more convincing, name the evidence that earned it, or put it back.
+- Load-bearing caveats survive every edit. Cut empty hedging, never a real qualification. Safety, legal, financial, and genuine-uncertainty caveats are facts, not filler. Removing one to add punch hides risk. Keep it.
+- Never manufacture authenticity. Humanize the user's real copy. Do not invent the proof or the pressure: no fabricated reviews, testimonials, social proof, scarcity, or urgency, and no putting words in a real person's mouth. Treat each like an invented metric, a placeholder and never a fabrication.
+- Humanizing is the wrong tool for disguising authorship where disclosure is expected, such as academic, regulated, or attested work. This is not an AI-detector bypass. Improve honest writing; do not help fake it.
+
+The standard: a reader who trusts this copy because it is clear and human should be safe in trusting it. For the full treatment, use `references/integrity.md`.
+
 ## Human prose rule
 
 Be specific, vary rhythm, prefer plain constructions, and never fabricate.
@@ -121,14 +134,15 @@ For drafting or finalization:
 2. Find the point worth making. Run the so-what ladder and the real-question test on the material before you write, so the copy leads with substance instead of backing into it.
 3. Write the deliverable only. Do not put planning notes, rationale, or assistant wrapper inside the copy.
 4. Apply the sentence test, the four substance tests, fact safety, voice safety, and dash default.
-5. Deliver clean copy. Put any editorial note outside the deliverable, and only if useful.
+5. Run the harm check: no claim more certain or proven than the source supports, every needed caveat kept, no manufactured proof or pressure.
+6. Deliver clean copy. Put any editorial note outside the deliverable, and only if useful.
 
 For cleanup:
 1. Scan for process bleed first.
-2. Scan for unsupported specifics and overclaims.
+2. Scan for unsupported specifics, overclaims, and certainty inflated past the source. Keep load-bearing caveats.
 3. Scan for clusters of AI-flavored prose using `references/ai-tells.md` only as a diagnostic lookup.
 4. Scan for clean nothing: lines that pass every check but say nothing only this writer could say. Sharpen them from the real material, or flag the gap with a placeholder.
-5. Rewrite with the smallest effective edit.
+5. Rewrite with the smallest effective edit, and never one that makes a claim more believable than it is true.
 6. Preserve meaning. If you remove or restructure something for strategy reasons, say so outside the rewritten copy.
 
 ## Before shipping
@@ -139,6 +153,8 @@ Check these in order:
 - Every paragraph serves the reader's situation, product behavior, offer, proof, objection, or next step.
 - No section is clean nothing. The strongest lines pass the swap and negation tests: they say something only this writer could say, and a real competitor might refuse to claim.
 - Every specific is supplied by the input or marked with a visible placeholder.
+- No claim is more certain, proven, or universal than the source supports, and every safety, legal, or financial caveat is intact.
+- No review, statistic, testimonial, scarcity, urgency, or named-person quote is invented; missing ones are visible placeholders.
 - The voice matches the provided sample or the format.
 - Em and en dashes are removed unless an exception applies.
 - No assistant wrapper remains: no "here is the copy," "below is," "hope this helps," or "let me know."
@@ -150,6 +166,7 @@ For long deliverables, you may run `scripts/copy_scan.py` as a warning net. Trea
 
 - `references/process-bleed.md`: expanded examples and fast scan phrases.
 - `references/substance.md`: the intelligence layer. How to say something worth reading, with tests and worked examples. Use it whenever copy is clean but weightless.
+- `references/integrity.md`: the do-more-good-than-harm layer. Persuasion within evidence, caveat preservation, no manufactured authenticity, and the boundary on disguising authorship. Use it whenever an edit would make a claim more believable.
 - `references/ai-tells.md`: diagnostic catalog for generic AI prose. Use it on clusters, not isolated words.
 - `references/qa-scorecard.md`: score finished copy before shipping or when testing the skill.
 - `references/voice-calibration.md`: quick voice matching guide.

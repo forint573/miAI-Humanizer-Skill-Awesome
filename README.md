@@ -68,6 +68,18 @@ The first row carries two problems at once: it narrates the chat and the plan, a
 
 In the first row, the chat reference and the roadmap narration are gone and the copy opens on the reader's problem. The unsupported `73%` and the vague "leading enterprises" are flagged for a human to verify, not shipped as proof. The second row shows the other half of the job: the committed-to-excellence line passes every grammar check and still says nothing, so the skill replaces it with the specific mechanism a competitor could not claim, and flags the one detail it cannot verify.
 
+## A humanizer is a persuasion amplifier
+
+Here is the uncomfortable part, and the reason this skill is built the way it is. Every edit it makes, clearer, more human, more specific, more confident, also makes the copy more persuasive. Persuasion is value when it is pointed at something true. It is harm when it is pointed at something false, because a polished, human, mechanism-backed claim gets trusted in a way that obvious AI slop never does. The better a humanizer works, the more damage it can do to copy that is not honest.
+
+So this version ships the firewall that the persuasion demands. Three rules, in `references/integrity.md`:
+
+- **Persuasion never outruns evidence.** The skill may make a claim clearer. It may not make it more certain, more proven, or more universal than your source supports. It watches the quiet escalations, like "may reduce" drifting to "eliminates," that read like style edits and quietly change the truth.
+- **Load-bearing caveats survive every edit.** It cuts empty hedging, never a real safety, legal, or financial qualification. Removing one of those to add punch hides risk, so it stays.
+- **Authenticity is never manufactured.** The skill humanizes your real copy. It will not invent reviews, testimonials, social proof, scarcity, or urgency, and it will not put words in a real person's mouth. Missing proof becomes a placeholder, exactly like a missing metric.
+
+This is also why it is not an AI-detector bypass. The goal is honest writing that reads well, not deception that reads human. The standard the whole skill answers to: a reader who trusts this copy because it is clear and human should be safe in trusting it.
+
 ## Install
 
 Three ways, fastest first.
@@ -109,7 +121,7 @@ It stays out of the way for code, raw data, tables, changelogs, release notes, l
 
 ## Optional scanner
 
-For long drafts, a heuristic scanner flags leftover process bleed, wrapper text, hype clusters, empty claims, vague authority, and em or en dashes:
+For long drafts, a heuristic scanner flags leftover process bleed, wrapper text, hype clusters, empty claims, high-liability claims, manufactured pressure, vague authority, and em or en dashes:
 
 ```bash
 python the-sonnopus-humanizer/scripts/copy_scan.py draft.txt
@@ -130,8 +142,9 @@ the-sonnopus-humanizer/
 ├── references/
 │   ├── process-bleed.md          # the seven leaks, examples, fast-scan phrases
 │   ├── substance.md              # the intelligence layer: how to say something worth reading
+│   ├── integrity.md              # the safety layer: do more good than harm
 │   ├── ai-tells.md               # diagnostic catalog of generic AI prose
-│   ├── qa-scorecard.md           # 9-category, 0 to 2 readiness score
+│   ├── qa-scorecard.md           # 10-category, 0 to 2 readiness score
 │   └── voice-calibration.md      # matching a sample or brand voice
 ├── scripts/
 │   └── copy_scan.py              # optional heuristic scanner
@@ -143,6 +156,7 @@ the-sonnopus-humanizer/
 
 - **Lean active layer.** `SKILL.md` holds only what the model needs in context to act. The deeper catalogs live in `references/` and load on demand, which keeps the instruction layer clear for both Sonnet and Opus.
 - **Clean is not the finish line.** De-slopping removes what should not be there. `substance.md` supplies what should: the specific, defensible point only this writer could make. The skill treats clean-but-empty copy as a failure and draws the substance from your material, never from an invented fact.
+- **Persuasion comes with a firewall.** A humanizer makes copy more convincing, so `integrity.md` makes sure it never gets more convincing than it is true. Persuasion never outruns evidence, real caveats stay, and authenticity is never faked. The scanner flags high-liability claims and manufactured pressure for you to verify or cut.
 - **Diagnose on clusters, not words.** `ai-tells.md` names why something reads as machine written. One formal word, one transition, or one dash is not proof of AI writing.
 - **Lightest effective edit.** Drafting, finalization, and cleanup are separate modes. The skill picks the smallest one that solves the task instead of rewriting good prose for its own sake.
 
@@ -162,6 +176,9 @@ No. Missing proof becomes a visible placeholder such as `[ADD VERIFIED METRIC]`,
 
 **Does it just remove AI words, or does it actually improve the writing?**
 Both, and the second part is the point. Removing tells leaves a gap, and a gap filled with a cleaner version of nothing is still nothing. The skill fills it with a specific, defensible claim drawn from your material, the kind a competitor could not also make. If the substance genuinely is not there, it flags the gap instead of inventing one.
+
+**Can it be used to make false claims more convincing, or to fake reviews and urgency?**
+No, and preventing that is the job of the integrity layer. The skill makes a claim more persuasive only when the evidence is already there. It never raises certainty past the source, never strips a safety or legal caveat to add punch, and never manufactures reviews, social proof, scarcity, or urgency. Missing proof becomes a placeholder, and the scanner flags high-liability claims and pressure tactics so you verify them or cut them. See `references/integrity.md`.
 
 ## Contributing
 

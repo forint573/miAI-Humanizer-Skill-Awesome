@@ -22,6 +22,8 @@ Fabricating an impressive claim is the opposite of intelligence. It is the lazie
 
 So: sharpen, compress, connect, reframe. Never manufacture.
 
+Every move below is bound by `references/integrity.md`, which is the wider boundary: persuasion may never outrun evidence, load-bearing caveats survive every edit, and authenticity is never faked. When sharpening a line would push it past what the source can support, the integrity layer wins. Flag the gap instead.
+
 ## The tests
 
 Apply these to copy that is already clean but feels weightless. Each one is a question with a fix.

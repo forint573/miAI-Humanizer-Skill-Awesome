@@ -63,6 +63,7 @@ expected_files = [
     SKILL_DIR / "README.md",
     SKILL_DIR / "references" / "process-bleed.md",
     SKILL_DIR / "references" / "substance.md",
+    SKILL_DIR / "references" / "integrity.md",
     SKILL_DIR / "references" / "ai-tells.md",
     SKILL_DIR / "references" / "qa-scorecard.md",
     SKILL_DIR / "references" / "voice-calibration.md",
@@ -97,8 +98,9 @@ check(
 section("Internal references resolve")
 
 for ref in ["references/process-bleed.md", "references/substance.md",
-            "references/ai-tells.md", "references/qa-scorecard.md",
-            "references/voice-calibration.md", "scripts/copy_scan.py"]:
+            "references/integrity.md", "references/ai-tells.md",
+            "references/qa-scorecard.md", "references/voice-calibration.md",
+            "scripts/copy_scan.py"]:
     check(f"SKILL.md mentions {ref}", ref in skill_md)
 
 
@@ -158,6 +160,25 @@ check("flags empty claims", empty_result["summary"].get("empty_claim", 0) >= 2)
 check("empty-claim warning mentions negation", "negation" in empty_warnings)
 
 
+# --- 5c. Scanner flags high-liability claims and manufactured pressure -------
+section("Scanner flags risky claims and manufactured pressure")
+
+risky = (
+    "Our supplement is clinically proven and FDA-approved. Results are "
+    "guaranteed and 100% risk-free, with a money-back guarantee. We are the #1 "
+    "choice. Only 3 left, offer ends tonight. Trusted by 40,000 happy customers."
+)
+risky_result = run_scanner(risky)
+risky_summary = risky_result["summary"]
+risky_warnings = " ".join(risky_result["warnings"]).lower()
+check("flags risky claims", risky_summary.get("risky_claim", 0) >= 2)
+check("flags manufactured pressure", risky_summary.get("manufactured_pressure", 0) >= 2)
+check(
+    "harm warnings name the remedy",
+    ("verify" in risky_warnings or "liability" in risky_warnings) and "scarcity" in risky_warnings,
+)
+
+
 # --- 6. Scanner stays quiet on clean copy -----------------------------------
 section("Scanner stays quiet on clean copy")
 
@@ -167,7 +188,8 @@ clean = (
 )
 clean_result = run_scanner(clean)
 problem_groups = {"process_bleed", "assistant_wrapper", "dash_usage",
-                  "vague_authority", "formulaic_structure"}
+                  "vague_authority", "formulaic_structure",
+                  "risky_claim", "manufactured_pressure"}
 clean_hits = {g: clean_result["summary"].get(g, 0) for g in problem_groups}
 check(
     "no problem warnings on clean copy",

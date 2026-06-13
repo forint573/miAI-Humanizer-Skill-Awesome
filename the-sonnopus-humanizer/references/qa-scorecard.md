@@ -74,18 +74,26 @@ Use this to judge whether a finished piece is production-ready. Score each categ
 
 2: The deliverable is clean, paste-ready, and free of accidental wrapper.
 
+## 10. Integrity (do more good than harm)
+
+0: An edit made a claim more certain, proven, or universal than the source supports, stripped a safety, legal, or financial caveat, or manufactured proof, scarcity, urgency, or a real person's words.
+
+1: Mostly safe, but at least one claim reads more convincing than the source proves, or a needed qualification was weakened.
+
+2: Persuasion never outran evidence. Caveats survived. Nothing was faked. A reader who trusts this because it is clear and human would be safe in trusting it.
+
 ## Interpretation
 
-Nine categories, 0 to 2 each, 18 maximum.
+Ten categories, 0 to 2 each, 20 maximum.
 
-17 to 18: publishable after normal human review.
+19 to 20: publishable after normal human review.
 
-13 to 16: good draft, needs one more pass.
+15 to 18: good draft, needs one more pass.
 
-10 to 12: useful direction, not production-ready.
+11 to 14: useful direction, not production-ready.
 
-0 to 9: rewrite from source.
+0 to 10: rewrite from source.
 
-A 0 in Truthfulness or Substance caps the result at "needs another pass," whatever the total. Clean, truthful, voice-true copy that says nothing is not publishable, and neither is a sharp piece built on an invented fact.
+A 0 in Truthfulness, Substance, or Integrity caps the result at "needs another pass," whatever the total. Clean copy that says nothing is not publishable; a sharp piece built on an invented fact is not publishable; and copy that reads more trustworthy than it is does the most harm of all.
 
-Do not chase a higher score by inventing details or flattening real voice. A truthful, voice-true 15 beats a polished, fabricated 17, and a piece that says something real beats a piece that only avoids mistakes.
+Do not chase a higher score by inventing details or flattening real voice. A truthful, voice-true 16 beats a polished, fabricated 18, and a piece that says something real beats a piece that only avoids mistakes.
