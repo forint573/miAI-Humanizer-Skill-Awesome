@@ -2,6 +2,8 @@
 
 # The Sonnopus Humanizer ✸☽
 
+(agent built stuff)
+
 **Humanize AI-written marketing and long-form copy in Claude. It removes AI tells and process bleed, keeps your facts and your voice, and pushes past clean-but-empty writing to the specific, true point worth reading.**
 
 [![CI](https://github.com/forint573/miAI-Humanizer-Skill-Awesome/actions/workflows/ci.yml/badge.svg)](https://github.com/forint573/miAI-Humanizer-Skill-Awesome/actions/workflows/ci.yml)
